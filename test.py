@@ -1,5 +1,5 @@
 import re
 import requests
 
-response = requests.get('https://api-tau-vert.vercel.app/api/python.py')
+response = requests.get('https://api-fhl8w5boj-descentdd.vercel.app/api/python')
 print(response.text)
