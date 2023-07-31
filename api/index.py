@@ -25,8 +25,3 @@ class handler(BaseHTTPRequestHandler):
             self.wfile.write(content)
         return
     
-if __name__ == '__main__':
-    from http.server import HTTPServer
-    server = HTTPServer(('localhost', 8080), handler)
-    print('Starting server at http://localhost:8080')
-    server.serve_forever()
