@@ -17,7 +17,8 @@ class handler(BaseHTTPRequestHandler):
         content_type = 'image/png' if img.lower().endswith('.png') else 'image/jpeg'
         self.send_header('Content-type', content_type)
         self.end_headers()
-        with open('./img/'+img, 'rb') as file:
+        file_path = os.path.join(os.getcwd(), 'img', img)
+        with open(file_path, 'rb') as file:
             content = file.read()
             #print(content)
             print(type(content))
