@@ -11,14 +11,13 @@ def find_png_files(directory):
 class handler(BaseHTTPRequestHandler):
  
     def do_GET(self):
-        imgs=find_png_files('img')
+        imgs=find_png_files('api/img')
         img = random.choice(imgs)
         self.send_response(200)
         content_type = 'image/png' if img.lower().endswith('.png') else 'image/jpeg'
         self.send_header('Content-type', content_type)
         self.end_headers()
-        file_path = os.path.join(os.getcwd(), 'img', img)
-        with open(file_path, 'rb') as file:
+        with open('api/img/'+img, 'rb') as file:
             content = file.read()
             #print(content)
             print(type(content))
